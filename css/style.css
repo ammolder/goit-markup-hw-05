@@ -462,6 +462,7 @@ h2 {
 }
 .container.footer {
   display: flex;
+  align-items: baseline;
 }
 .logo-footer {
   display: block;
@@ -495,7 +496,6 @@ h2 {
   margin-bottom: 20px;
 }
 .social-footer {
-  margin-top: 7px;
   margin-left: 70px;
 }
 .social-links {
@@ -562,6 +562,7 @@ h2 {
   letter-spacing: 0.03em;
   cursor: pointer;
   text-align: center;
+  border: none;
 }
 .buttons:hover,
 .buttons:focus {
