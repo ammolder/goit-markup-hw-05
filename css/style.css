@@ -191,6 +191,8 @@ img {
   height: 12px;
   margin-right: 10px;
   fill: var(--primari-text-color);
+
+  transition: fill 250ms var(--timing-function);
 }
 .icon-envelope:hover .envelope,
 .icon-envelope:focus .envelope {
@@ -201,6 +203,8 @@ img {
   height: 16px;
   margin-right: 10px;
   fill: var(--primari-text-color);
+
+  transition: fill 250ms var(--timing-function);
 }
 .icon-smartphone:hover .smartphone,
 .icon-smartphone:focus .smartphone {
@@ -338,16 +342,17 @@ h2 {
 .work-box {
   position: relative;
 }
-.work-box::before {
+/* .work-box::before {
   content: "";
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 70px;
   background: #2f303acc;
-}
+} */
 .work-text {
   position: absolute;
+  z-index: 2;
   bottom: 27px;
   left: 50%;
   transform: translatex(-50%);
@@ -356,6 +361,14 @@ h2 {
   font-weight: 700;
   text-align: center;
   color: var(--primari-white-color);
+}
+.bgr-text {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background: #2f303acc;
 }
 
 /* Staff */
@@ -424,6 +437,7 @@ h2 {
 .facebook,
 .linkedin {
   fill: var(--bg-icon);
+  transition: fill 250ms var(--timing-function);
 }
 .person-link:hover .instagram,
 .person-link:focus .instagram,
@@ -570,7 +584,7 @@ h2 {
   margin-left: 8px;
 }
 .buttons {
-  padding: 0px 22px;
+  padding: 6px 22px;
 
   color: var(--title-text-color);
   background-color: var(--staff-bdrcolor);
@@ -628,21 +642,20 @@ h2 {
   display: flex;
   flex-wrap: wrap;
 }
-.project-card {
-  display: flex;
-}
+
 .project-list li:not(:nth-of-type(3n)) {
   margin-right: 30px;
 }
 .project-list li:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
 }
-.project-list a {
+.project-link {
+  display: block;
   box-shadow: none;
   transition: box-shadow 250ms var(--timing-function);
 }
-.project-list a:hover,
-.project-list a:focus {
+.project-link:hover,
+.project-link:focus {
   box-shadow: 1px 4px 6px 0px #00000029, 0px 4px 4px 0px #0000000f,
     0px 1px 1px 0px #0000001f;
 }
@@ -691,12 +704,12 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
+
+  background-color: #000000a0;
   opacity: 1;
   transition: opacity 250ms var(--timing-function);
-  background-color: #000000a0;
 }
 .backdrop.is-hidden {
-  visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
